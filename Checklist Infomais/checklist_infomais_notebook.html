@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aparelhos - Assistência Técnica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+		<img src="https://i.ibb.co/nfLkGgt/LOGO-INFOMAIS.png" alt="LOGO-INFOMAIS" class="logo">
+        <h1>Cadastro de Aparelhos</h1>
+        <form id="cadastroForm">
+            <fieldset>
+                <legend>Informações do Cliente</legend>
+                <label for="nomeCliente">Nome do Cliente:</label>
+                <input type="text" id="nomeCliente" name="nomeCliente" required>
+
+                <label for="numeroOS">Número da OS:</label>
+                <input type="text" id="numeroOS" name="numeroOS" required>
+
+                <label for="modeloAparelho">Modelo do Aparelho:</label>
+                <input type="text" id="modeloAparelho" name="modeloAparelho" required> 
+            </fieldset>
+
+					<fieldset>
+			<legend>Estado do Aparelho</legend>
+			
+			<div class="question">
+				<p>1. Aparelho liga?</p>
+				<label><input type="radio" name="aparelhoLiga" value="Sim" required> Sim</label>
+				<label><input type="radio" name="aparelhoLiga" value="Não"> Não</label>
+				<label><input type="radio" name="aparelhoLiga" value="Não é possível verificar"> Não é possível verificar</label>
+			</div>
+
+			<div class="question">
+				<p>2. O teclado funciona?</p>
+				<label><input type="radio" name="teclado" value="Sim" required> Sim</label>
+				<label><input type="radio" name="teclado" value="Não"> Não</label>
+				<label><input type="radio" name="teclado" value="Não é possível verificar"> Não é possível verificar</label>
+			</div>
+
+			<div class="question">
+				<p>3. A tela funciona?</p>
+				<label><input type="radio" name="tela" value="Sim" required> Sim</label>
+				<label><input type="radio" name="tela" value="Não"> Não</label>
+				<label><input type="radio" name="tela" value="Não é possível verificar"> Não é possível verificar</label>
+			</div>
+
+			<div class="question">
+				<p>4. A tela possui avaria?</p>
+				<label><input type="radio" name="telaAvaria" value="Sim" required> Sim</label>
+				<label><input type="radio" name="telaAvaria" value="Não"> Não</label>
+				<label><input type="radio" name="telaAvaria" value="Não é possível verificar"> Não é possível verificar</label>
+			</div>
+
+			<div class="question">
+				<p>5. A carcaça está em boas condições?</p>
+				<label><input type="radio" name="carcaca" value="Sim" required> Sim</label>
+				<label><input type="radio" name="carcaca" value="Não"> Não</label>
+				<label><input type="radio" name="carcaca" value="Não é possível verificar"> Não é possível verificar</label>
+			</div>
+
+			<div class="question">
+				<p>6. As dobradiças estão quebradas?</p>
+				<label><input type="radio" name="dobradiças" value="Sim" required> Sim</label>
+				<label><input type="radio" name="dobradiças" value="Não"> Não</label>
+				<label><input type="radio" name="dobradiças" value="Não é possível verificar"> Não é possível verificar</label>
+			</div>
+
+			<div class="question">
+				<p>7. Possui carregador?</p>
+				<label><input type="radio" name="carregador" value="Sim" required> Sim</label>
+				<label><input type="radio" name="carregador" value="Não"> Não</label>
+				<label><input type="radio" name="carregador" value="Não é possível verificar"> Não é possível verificar</label>
+			</div>
+
+			<div class="question">
+				<p>8. O carregador funciona?</p>
+				<label><input type="radio" name="carregadorFunciona" value="Sim" required> Sim</label>
+				<label><input type="radio" name="carregadorFunciona" value="Não"> Não</label>
+				<label><input type="radio" name="carregadorFunciona" value="Não é possível verificar"> Não é possível verificar</label>
+			</div>
+
+			<div class="question">
+				<p>9. Possui bateria?</p>
+				<label><input type="radio" name="bateria" value="Sim" required> Sim</label>
+				<label><input type="radio" name="bateria" value="Não"> Não</label>
+				<label><input type="radio" name="bateria" value="Não é possível verificar"> Não é possível verificar</label>
+			</div>
+
+			<div class="question">
+				<p>10. Bateria segura carga?</p>
+				<label><input type="radio" name="bateriaCarga" value="Sim" required> Sim</label>
+				<label><input type="radio" name="bateriaCarga" value="Não"> Não</label>
+				<label><input type="radio" name="bateriaCarga" value="Não é possível verificar"> Não é possível verificar</label>
+			</div>
+
+			<div class="question">
+				<p>11. Outros problemas:</p>
+				<textarea id="outrosProblemas" name="outrosProblemas" rows="3" placeholder="Descreva outros problemas (opcional)"></textarea>
+			</div>
+
+		</fieldset>
+
+
+            <fieldset>
+                <legend>Autorização</legend>
+                <p>Estou ciente do estado atual do meu aparelho e autorizo que ele seja submetido a testes pela Infomais.</p>
+            </fieldset>
+
+            <button type="button" id="imprimirBtn">Imprimir</button>
+        </form>
+
+        <div id="resultado" class="resultado"></div>
+    </div>
+
+    <!-- Adicionando jsPDF e jsPDF-AutoTable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.21/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
